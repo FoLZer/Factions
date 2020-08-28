@@ -22,7 +22,7 @@ public class CmdMod extends FCommand {
 
         this.requirements = new CommandRequirements.Builder(Permission.MOD)
                 .memberOnly()
-                .withRole(Role.COLEADER)
+                .withRole(Role.ADMIN)
                 .build();
     }
 

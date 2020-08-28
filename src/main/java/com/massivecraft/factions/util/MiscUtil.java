@@ -143,20 +143,12 @@ public class MiscUtil {
                     admins.add(player);
                     break;
 
-                case COLEADER:
-                    coleaders.add(player);
-                    break;
-
                 case MODERATOR:
                     moderators.add(player);
                     break;
 
                 case NORMAL:
                     normal.add(player);
-                    break;
-
-                case RECRUIT:
-                    recruit.add(player);
                     break;
             }
         }

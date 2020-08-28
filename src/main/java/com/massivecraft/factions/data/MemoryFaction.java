@@ -980,7 +980,7 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
         FPlayer oldLeader = this.getFPlayerAdmin();
 
         // get list of coleaders, or mods, or list of normal members if there are no moderators
-        ArrayList<FPlayer> replacements = this.getFPlayersWhereRole(Role.COLEADER);
+        ArrayList<FPlayer> replacements = null;
         if (replacements == null || replacements.isEmpty()) {
             replacements = this.getFPlayersWhereRole(Role.MODERATOR);
         }
@@ -1011,7 +1011,7 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
             Factions.getInstance().removeFaction(getId());
         } else { // promote new faction admin
             if (oldLeader != null) {
-                oldLeader.setRole(Role.COLEADER);
+                oldLeader.setRole(Role.MODERATOR);
             }
             replacements.get(0).setRole(Role.ADMIN);
             //TODO:TL

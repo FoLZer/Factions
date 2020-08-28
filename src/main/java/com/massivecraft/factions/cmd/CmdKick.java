@@ -36,7 +36,7 @@ public class CmdKick extends FCommand {
                 String s = player.getName();
                 msg.then(s + " ").color(ChatColor.WHITE).tooltip(TL.COMMAND_KICK_CLICKTOKICK.toString() + s).command("/" + FactionsPlugin.getInstance().conf().getCommandBase().get(0) + " kick " + s);
             }
-            if (context.fPlayer.getRole().isAtLeast(Role.COLEADER)) {
+            if (context.fPlayer.getRole().isAtLeast(Role.MODERATOR)) {
                 // For both coleader and admin, add mods.
                 for (FPlayer player : context.faction.getFPlayersWhereRole(Role.MODERATOR)) {
                     String s = player.getName();
@@ -44,7 +44,7 @@ public class CmdKick extends FCommand {
                 }
                 if (context.fPlayer.getRole() == Role.ADMIN) {
                     // Only add coleader to this for the leader.
-                    for (FPlayer player : context.faction.getFPlayersWhereRole(Role.COLEADER)) {
+                    for (FPlayer player : context.faction.getFPlayersWhereRole(Role.MODERATOR)) {
                         String s = player.getName();
                         msg.then(s + " ").color(ChatColor.RED).tooltip(TL.COMMAND_KICK_CLICKTOKICK.toString() + s).command("/" + FactionsPlugin.getInstance().conf().getCommandBase().get(0) + " kick " + s);
                     }

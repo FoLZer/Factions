@@ -9,11 +9,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum Role implements Permissible {
-    ADMIN(4, TL.ROLE_ADMIN),
-    COLEADER(3, TL.ROLE_COLEADER),
-    MODERATOR(2, TL.ROLE_MODERATOR),
-    NORMAL(1, TL.ROLE_NORMAL),
-    RECRUIT(0, TL.ROLE_RECRUIT);
+    ADMIN(2, TL.ROLE_ADMIN),
+    MODERATOR(1, TL.ROLE_MODERATOR),
+    NORMAL(0, TL.ROLE_NORMAL);
 
     public final int value;
     public final String nicename;
@@ -42,14 +40,10 @@ public enum Role implements Permissible {
     public static Role getByValue(int value) {
         switch (value) {
             case 0:
-                return RECRUIT;
-            case 1:
                 return NORMAL;
-            case 2:
+            case 1:
                 return MODERATOR;
-            case 3:
-                return COLEADER;
-            case 4:
+            case 2:
                 return ADMIN;
         }
 
@@ -60,18 +54,12 @@ public enum Role implements Permissible {
         switch (check.toLowerCase()) {
             case "admin":
                 return ADMIN;
-            case "coleader":
-            case "coowner":
-                return COLEADER;
             case "mod":
             case "moderator":
                 return MODERATOR;
             case "normal":
             case "member":
                 return NORMAL;
-            case "recruit":
-            case "rec":
-                return RECRUIT;
         }
 
         return null;
@@ -91,10 +79,6 @@ public enum Role implements Permissible {
             return FactionsPlugin.getInstance().conf().factions().prefixes().getAdmin();
         }
 
-        if (this == Role.COLEADER) {
-            return FactionsPlugin.getInstance().conf().factions().prefixes().getColeader();
-        }
-
         if (this == Role.MODERATOR) {
             return FactionsPlugin.getInstance().conf().factions().prefixes().getMod();
         }
@@ -102,11 +86,6 @@ public enum Role implements Permissible {
         if (this == Role.NORMAL) {
             return FactionsPlugin.getInstance().conf().factions().prefixes().getNormal();
         }
-
-        if (this == Role.RECRUIT) {
-            return FactionsPlugin.getInstance().conf().factions().prefixes().getRecruit();
-        }
-
         return "";
     }
 

@@ -5,11 +5,9 @@ import com.massivecraft.factions.perms.Role;
 import com.massivecraft.factions.util.TL;
 
 public enum OldRoleV0 implements OldPermissableV0 {
-    ADMIN(4, TL.ROLE_ADMIN, Role.ADMIN),
-    COLEADER(3, TL.ROLE_COLEADER, Role.COLEADER),
-    MODERATOR(2, TL.ROLE_MODERATOR, Role.MODERATOR),
-    NORMAL(1, TL.ROLE_NORMAL, Role.NORMAL),
-    RECRUIT(0, TL.ROLE_RECRUIT, Role.RECRUIT);
+    ADMIN(2, TL.ROLE_ADMIN, Role.ADMIN),
+    MODERATOR(1, TL.ROLE_MODERATOR, Role.MODERATOR),
+    NORMAL(0, TL.ROLE_NORMAL, Role.NORMAL);
 
     public final int value;
     public final String nicename;
@@ -31,18 +29,12 @@ public enum OldRoleV0 implements OldPermissableV0 {
         switch (check.toLowerCase()) {
             case "admin":
                 return ADMIN;
-            case "coleader":
-            case "coowner":
-                return COLEADER;
             case "mod":
             case "moderator":
                 return MODERATOR;
             case "normal":
             case "member":
                 return NORMAL;
-            case "recruit":
-            case "rec":
-                return RECRUIT;
         }
 
         return null;

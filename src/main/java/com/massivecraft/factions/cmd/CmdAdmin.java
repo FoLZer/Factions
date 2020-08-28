@@ -69,7 +69,7 @@ public class CmdAdmin extends FCommand {
 
         // promote target player, and demote existing admin if one exists
         if (admin != null) {
-            admin.setRole(Role.COLEADER);
+            admin.setRole(Role.MODERATOR);
         }
         fyou.setRole(Role.ADMIN);
         context.msg(TL.COMMAND_ADMIN_PROMOTES, fyou.describeTo(context.fPlayer, true));

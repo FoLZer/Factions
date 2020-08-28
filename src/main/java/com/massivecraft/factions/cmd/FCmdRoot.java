@@ -117,7 +117,6 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
     public CmdBan cmdban = new CmdBan();
     public CmdUnban cmdUnban = new CmdUnban();
     public CmdBanlist cmdbanlist = new CmdBanlist();
-    public CmdColeader cmdColeader = new CmdColeader();
     public CmdNear cmdNear = new CmdNear();
     public CmdTrail cmdTrail = new CmdTrail();
     public CmdDebug cmdDebug = new CmdDebug();
@@ -207,7 +206,6 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         this.addSubCommand(this.cmdban);
         this.addSubCommand(this.cmdUnban);
         this.addSubCommand(this.cmdbanlist);
-        this.addSubCommand(this.cmdColeader);
         this.addSubCommand(this.cmdNear);
         this.addSubCommand(this.cmdDebug);
         this.addSubCommand(this.cmdListClaims);

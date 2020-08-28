@@ -22,11 +22,6 @@ public class PermissibleRelationGUI extends GUI<Permissible> {
         items = new LinkedHashMap<>();
         SimpleItem.Builder starter = SimpleItem.builder().setName("&8[{relation-color}{relation}&8]");
 
-        SimpleItem recruit = starter.build();
-        recruit.setName(Role.RECRUIT.getTranslation().toString());
-        recruit.setMaterial(MaterialDb.get("WOODEN_SWORD"));
-        items.put(Role.RECRUIT, recruit);
-
         SimpleItem normal = starter.build();
         normal.setName(Role.NORMAL.getTranslation().toString());
         normal.setMaterial(MaterialDb.get("STONE_SWORD"));
@@ -36,11 +31,6 @@ public class PermissibleRelationGUI extends GUI<Permissible> {
         moderator.setName(Role.MODERATOR.getTranslation().toString());
         moderator.setMaterial(MaterialDb.get("IRON_SWORD"));
         items.put(Role.MODERATOR, moderator);
-
-        SimpleItem coleader = starter.build();
-        coleader.setName(Role.COLEADER.getTranslation().toString());
-        coleader.setMaterial(MaterialDb.get("DIAMOND_SWORD"));
-        items.put(Role.COLEADER, coleader);
 
         SimpleItem ally = starter.build();
         ally.setName(Relation.ALLY.getTranslation());
@@ -107,15 +97,13 @@ public class PermissibleRelationGUI extends GUI<Permissible> {
     protected Map<Integer, Permissible> createSlotMap() {
         Map<Integer, Permissible> map = new HashMap<>();
         if (online) {
-            map.put(0, Role.RECRUIT);
-            map.put(1, Role.NORMAL);
-            map.put(2, Role.MODERATOR);
-            map.put(3, Role.COLEADER);
+            map.put(0, Role.NORMAL);
+            map.put(1, Role.MODERATOR);
         }
-        map.put(5, Relation.ALLY);
-        map.put(6, Relation.NEUTRAL);
-        map.put(7, Relation.TRUCE);
-        map.put(8, Relation.ENEMY);
+        map.put(2, Relation.ALLY);
+        map.put(3, Relation.NEUTRAL);
+        map.put(4, Relation.TRUCE);
+        map.put(5, Relation.ENEMY);
         return map;
     }
 

@@ -69,9 +69,7 @@ public class PermissionsMapTypeAdapter implements JsonDeserializer<Map<Permissib
                 return null;
             }
         } else {
-            if (name.equals(TL.ROLE_RECRUIT.toString())) {
-                return Role.RECRUIT;
-            } else if (name.equals(TL.ROLE_NORMAL.toString())) {
+        	if (name.equals(TL.ROLE_NORMAL.toString())) {
                 return Role.NORMAL;
             } else if (name.equals(TL.ROLE_MODERATOR.toString())) {
                 return Role.MODERATOR;
